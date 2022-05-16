@@ -1,3 +1,12 @@
 <h1><%= @article.title %></h1>
 <p>Body: <%= @article.body %></p>
 <p>Importance: <%= @article.importance %></p>
+
+time_ago_in_words(Time.now)
+<p>Created <%= time_ago_in_words(@article.created_at) %> ago</p>
+<p>Updated <%= time_ago_in_words(@article.updated_at) %> ago</p>
+
+
+<p><%= link_to "Edit this article", edit_article_path %></p>
+<p><%= link_to "Go to Home", home_path %></p>
+

@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
         @time = Time.now
         @articles = Article.all
 
-        console
+        # console
     end
 
     def show
@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     def new
         @article = Article.new
 
-        console
+        # console
     end
 
     def create
@@ -25,6 +25,20 @@ class ArticlesController < ApplicationController
         redirect_to articles_path
         else
             render :new
+        end
+    end
+
+    def edit
+        @article = Article.find(params[:id])
+    end
+
+    def update
+        @article = Article.new(article_params)
+        
+        if @article.update(article_params)
+        redirect_to articles_path
+        else
+            render :edit
         end
     end
 
