@@ -8,4 +8,10 @@ time_ago_in_words(Time.now)
 
 
 <p><%= link_to "Edit this article", edit_article_path %></p>
+<p><%= link_to "Delete this article", 
+        article_path,
+        method: :delete,
+        data: { confirm: "do you really want to delete?"}
+         %></p>
+
 <%= render "shared/nav" %>
