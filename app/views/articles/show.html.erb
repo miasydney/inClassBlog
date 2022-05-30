@@ -15,3 +15,28 @@ time_ago_in_words(Time.now)
          %></p>
 
 <%= render "shared/nav" %>
+
+<h2>Comments</h2>
+<%# loop through comments (there is an array of them) you have available  %>
+<% @article.comments.each do |comment| %>
+  <p>Commenter: <%= comment.commenter %></p>
+  <p>Comment: <%= comment.body %></p>
+
+<% end %>
+
+<h2>Add a Comment</h2>
+<%= form_with model: [@article, @article.comments.build ] do |form| %>
+<div>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter %>
+</div>
+
+<div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+</div>
+
+<div>
+    <%= form.submit %>
+</div>
+<% end %>
