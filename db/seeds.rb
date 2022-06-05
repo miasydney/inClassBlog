@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# seed file allows you to seed/populate the database 
+
+  articles = Article.create([
+      {
+        title: 'Star Wars',
+        body: 'loremn impusum text',
+        importance: 6 },
+      {
+        title: 'Star Trek',
+        body: 'loremn impusum text',
+        importance: 2 }
+      ])
