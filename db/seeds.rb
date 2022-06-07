@@ -8,13 +8,14 @@
 
 # seed file allows you to seed/populate the database 
 
-  articles = Article.create([
+10.times do |i|
+
+  Article.create([
       {
-        title: 'Star Wars',
+        title: "THis is title #{i}",
         body: 'loremn impusum text',
-        importance: 6 },
-      {
-        title: 'Star Trek',
-        body: 'loremn impusum text',
-        importance: 2 }
+        importance: rand(1..10) 
+      }
       ])
+
+      end
