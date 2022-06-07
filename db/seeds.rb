@@ -12,8 +12,8 @@
 
   Article.create([
       {
-        title: "THis is title #{i}",
-        body: 'loremn impusum text',
+        title: Faker::TvShows::BigBangTheory.character,
+        body: Faker::TvShows::BigBangTheory.quote,
         importance: rand(1..10) 
       }
       ])
