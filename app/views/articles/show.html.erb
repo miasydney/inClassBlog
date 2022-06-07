@@ -6,6 +6,12 @@ time_ago_in_words(Time.now)
 <p>Created <%= time_ago_in_words(@article.created_at) %> ago</p>
 <p>Updated <%= time_ago_in_words(@article.updated_at) %> ago</p>
 
+<%# we can write the .next and .prev as a method in the articles model - models/articles.rb %>
+<%# (in the model because its doing a call go get the id from the database) %>
+<p><%= link_to_unless_current "Go to next article", @article.next %></p>
+<p><%= link_to_unless_current "Go to previous article", @article.prev %></p>
+
+<%# link_to_unless_current makes it not a link if it would only link to itself %>
 
 <p><%= link_to "Edit this article", edit_article_path %></p>
 <p><%= link_to "Delete this article", 
