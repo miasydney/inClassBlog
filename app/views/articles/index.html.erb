@@ -20,7 +20,8 @@
   <% @articles.each do |article| %>
   <tr style="background-color:<%= cycle("red", "green") %>">
     <td><%= link_to article.title, article_path(article) %></td>
-    <td><%= truncate(article.body, length: 15, omission: '... (TBC)') %></td>
+    <%# <td><%= truncate(article.body.to_s, length: 15, omission: '... (TBC)')%>
+    <td><%= article.body
     <td><%= article.importance %></td>
 
   </tr>
