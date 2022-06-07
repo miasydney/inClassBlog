@@ -14,5 +14,10 @@
   <body>
   <%= render "shared/nav" %>
     <%= yield %>
+    <%# following lines means i want to only have the console there in the development environment  %>
+    <%# (not the deployment environment) %>
+    <% if Rails.env.development? %>
+    <% console %>
+    <% end %>
   </body>
 </html>
