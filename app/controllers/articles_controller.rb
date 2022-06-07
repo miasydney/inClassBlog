@@ -1,4 +1,8 @@
 class ArticlesController < ApplicationController
+
+    # everything expect for index and show must require the user to be authenticated (signed in)
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
     def index
         @time = Time.now
         @articles = Article.all
