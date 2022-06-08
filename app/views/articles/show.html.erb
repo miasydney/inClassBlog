@@ -13,12 +13,16 @@ time_ago_in_words(Time.now)
 
 <%# link_to_unless_current makes it not a link if it would only link to itself %>
 
+<%# if its owned by the currently logged in user, display these things (link to edit and delete articles)  %>
+<%# otherwise don't show it %>
+<% if current_user == @article.user %>
 <p><%= link_to "Edit this article", edit_article_path %></p>
 <p><%= link_to "Delete this article", 
         article_path,
         method: :delete,
         data: { confirm: "do you really want to delete?"}
          %></p>
+<% end %>
 
 <%= render "shared/nav" %>
 
